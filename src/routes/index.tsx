@@ -544,6 +544,7 @@ function IndexContent() {
     >
       <Nav onLogin={() => setAuthOpen(true)} onBookDemo={onBookDemo} />
       <Hero onBookDemo={onBookDemo} />
+      <SocialProof />
       <ControlTowerSection />
       <WhyUs />
       <TrustBand />
@@ -1822,6 +1823,58 @@ const TRUST_POINTS = [
   "Works core-connected or core-independent, with the same workflow",
 ];
 
+// ---------------- Social proof (design-partner program) ----------------
+// NOTE: placeholder content for pre-launch. Replace the role-based descriptors and
+// the testimonial with a real named pilot/MGA as soon as one is public.
+const DESIGN_PARTNERS: string[] = [
+  "Specialty MGA",
+  "Regional carrier",
+  "Wholesale broker",
+  "Program administrator",
+];
+
+function SocialProof() {
+  return (
+    <section className="border-b border-border/60 bg-surface-2/40 py-16">
+      <div className="mx-auto max-w-7xl px-5">
+        <Reveal className="flex flex-col items-center gap-3 text-center">
+          <span className="rounded-full border border-primary/30 bg-primary/5 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-primary">
+            Design partner program — now onboarding
+          </span>
+          <h2 className="max-w-2xl text-2xl font-semibold tracking-tight md:text-3xl">
+            Being shaped with early insurance teams
+          </h2>
+          <p className="max-w-xl text-sm text-muted-foreground">
+            We're building alongside a small group of design partners across underwriting and
+            claims. Partner types below are illustrative of the program.
+          </p>
+        </Reveal>
+
+        <Reveal pop className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          {DESIGN_PARTNERS.map((p) => (
+            <span
+              key={p}
+              className="rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-medium text-muted-foreground"
+            >
+              {p}
+            </span>
+          ))}
+        </Reveal>
+
+        <Reveal className="mx-auto mt-10 max-w-2xl rounded-2xl border border-border bg-surface p-6 text-center">
+          <p className="text-sm italic leading-relaxed text-foreground/90 md:text-base">
+            &ldquo;The human-in-the-loop approvals and full audit trail are exactly what our
+            compliance team needs before we automate any part of triage.&rdquo;
+          </p>
+          <p className="mt-3 text-xs text-muted-foreground">
+            Illustrative — design partner feedback, to be attributed on launch
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function TrustBand() {
   return (
     <section className="border-b border-border/60 py-20">
@@ -2070,6 +2123,9 @@ function CoreDiagram() {
             rules, the Connector Decision Layer, and reporting — already wired together and tuned for
             insurance. Click any block to see what it does.
           </p>
+          <span className="mt-1 rounded-full border border-border bg-surface px-3 py-1 text-[11px] text-muted-foreground">
+            In active build with design partners across underwriting &amp; claims
+          </span>
         </Reveal>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-5 lg:grid-cols-3">
           {CORE_CAPABILITIES.map((s, i) => {
