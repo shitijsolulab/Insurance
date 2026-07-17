@@ -83,7 +83,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "AI copilots for underwriting triage, claims processing, customer onboarding & KYC, fraud detection, and executive reporting — connected to Gmail, Outlook, Salesforce, HubSpot, Google Drive, DocuSign, and Slack via Nango.",
+          "AI copilots for underwriting triage, claims processing, customer onboarding & KYC, fraud detection, and executive reporting — securely connected to Gmail, Outlook, Salesforce, HubSpot, Google Drive, DocuSign, and Slack.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

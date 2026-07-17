@@ -869,17 +869,17 @@ const WHY_US: { icon: LucideIcon; title: string; desc: string; featured?: boolea
   {
     icon: Plug,
     title: "Connector-First",
-    desc: "Runs on the enterprise systems you already use — policy admin, email, storage, forms, and Slack — through Nango connectors.",
+    desc: "Runs on the enterprise systems you already use — policy admin, email, storage, forms, and Slack — through one secure connection.",
   },
   {
     icon: Gauge,
     title: "Accuracy & Validation",
-    desc: "KYC, coverage, duplicate, and premium-match checks on every document, so nothing bad flows downstream.",
+    desc: "Every extracted field is traceable to its source document and human-reviewed, so nothing questionable reaches your core system.",
   },
   {
     icon: Lock,
     title: "Confidentiality & Security",
-    desc: "Enterprise-grade encryption, role-based access, and SOC 2 controls protect your policyholder data.",
+    desc: "Your policyholder data stays protected and every action is logged — so you can prove who did what, and when.",
   },
   {
     icon: LifeBuoy,
@@ -1013,7 +1013,7 @@ function ServicesBand() {
 
 const ABOUT_POINTS = [
   "Purpose-built for MGAs and assistant underwriters triaging new submissions — not a generic platform",
-  "Runs on the tools you already use — Gmail, Outlook, Salesforce, Google Drive — through Nango connectors",
+  "Runs on the tools you already use — Gmail, Outlook, Salesforce, Google Drive — through one secure connection",
   "The AI prepares; your underwriter decides: proceed, request more information, or decline",
 ];
 
@@ -1030,7 +1030,7 @@ function AboutSection({ onBookDemo }: { onBookDemo: () => void }) {
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
             Our copilot reads every broker submission — ACORD applications, loss runs, and financial
             statements — extracts and validates the data, applies your appetite rules, and drafts a
-            recommendation. It runs on the enterprise tools you already use through Nango connectors,
+            recommendation. It runs on the enterprise tools you already use through one secure connection,
             with a human underwriter approving every decision and a full audit trail on each action.
           </p>
           <ul className="mt-5 space-y-2.5">
@@ -1086,6 +1086,9 @@ function AboutSection({ onBookDemo }: { onBookDemo: () => void }) {
                 </div>
               ))}
             </div>
+            <p className="px-5 pb-4 text-[10px] text-muted-foreground/70">
+              Illustrative — sample data, not live customer usage.
+            </p>
           </div>
         </Reveal>
       </div>
@@ -1647,8 +1650,8 @@ function HeroPreview() {
             </span>
             <span className="text-sm font-semibold">Underwriting control tower</span>
           </div>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[11px] font-medium text-emerald-500">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" /> Live
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/40 px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
+            <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/60" /> Sample data
           </span>
         </div>
 
@@ -1738,6 +1741,10 @@ function HeroPreview() {
               </button>
             </div>
           </div>
+
+          <p className="text-center text-[10px] text-muted-foreground/70">
+            Illustrative preview — sample data, not live customer usage.
+          </p>
         </div>
       </div>
     </div>
@@ -1871,24 +1878,24 @@ function TrustBand() {
 
 const FAQS: { q: string; a: string }[] = [
   {
+    q: "Does the AI act on its own?",
+    a: "No. The AI reads documents, applies your rules, and drafts a recommendation — it never binds, declines, pays, or writes anything to your systems without a human approving it first. Every recommendation sits in a review queue until an underwriter, adjuster, or manager approves, edits, or overrides it. Nothing moves downstream — no policy update, no claim payment, no CRM write-back — without that sign-off, and every decision is logged with who approved it and when.",
+  },
+  {
     q: "What insurance workflows does the AI OS automate?",
     a: "Eight document-driven workflows out of the box: new policy underwriting, claims processing, customer onboarding & KYC, fraud detection, premium reconciliation, portfolio risk monitoring, claims document extraction, and executive reporting.",
   },
   {
     q: "Do I need a dedicated policy admin or claims system to use it?",
-    a: "No. The AI OS is connector-first — it runs on the enterprise systems you already use (policy admin, email, storage, forms, and Slack) through Nango connectors, and can be extended to specialized insurance platforms later without changing the workflows.",
+    a: "No. It runs on the tools you're already using — email, Salesforce, Google Drive, Sheets — so you can start without a PAS or claims-system integration in place. If you do have a system like Guidewire or Duck Creek connected, approved actions write back there directly; if not, records are kept in a connected fallback like Google Sheets so nothing is lost or untracked.",
   },
   {
     q: "What happens if my policy admin system isn't connected?",
-    a: "The Connector Decision Layer writes approved records to your core system (a CRM or ERP such as Salesforce, HubSpot, NetSuite, or Dynamics 365) when it's connected, and falls back to Google Sheets when it isn't — the same workflow logic and approvals either way.",
-  },
-  {
-    q: "Does the AI act on its own?",
-    a: "Never without sign-off. Each copilot extracts, validates, and drafts an action, then pauses for the right approver — underwriting, finance, claims, or risk — before anything is written back, with a full audit trail.",
+    a: "Everything still works — the AI still reads submissions, applies your rules, and drafts recommendations. The only difference is where approved decisions get recorded: instead of writing back into a PAS or claims system, they're logged in a connected fallback (Google Sheets, by default) that your team can review, export, or later migrate into a PAS once one is connected.",
   },
   {
     q: "How does it read documents?",
-    a: "Eagle Doc handles OCR, classification, and structured extraction for applications, policies, claim forms, medical reports, and invoices — with a confidence score on every field so low-confidence extractions are flagged for review.",
+    a: "It extracts structured data from whatever comes in — PDFs, scanned forms, Excel files, emails — using OCR and document classification tuned for insurance formats like ACORD applications and loss runs. Every extracted field is traceable back to the exact document and location it came from, so your team can verify anything the AI surfaces against the original source in one click. If a document is too degraded to read reliably (a bad scan, an illegible field), it's routed to a manual review queue instead of guessing — we'd rather flag \"we couldn't read this\" than produce a confident-looking wrong answer.",
   },
 ];
 
@@ -1933,11 +1940,18 @@ function FaqSection() {
                     )}
                   />
                 </button>
-                {isOpen && (
-                  <div className="px-5 pb-4 text-sm leading-relaxed text-muted-foreground">
-                    {f.a}
+                <div
+                  className={cn(
+                    "grid transition-all duration-200",
+                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+                  )}
+                >
+                  <div className="overflow-hidden">
+                    <div className="px-5 pb-4 text-sm leading-relaxed text-muted-foreground">
+                      {f.a}
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}
@@ -2625,7 +2639,7 @@ function IntegrationCatalog() {
             16+ enterprise systems your copilots can talk to.
           </h2>
           <p className="mx-auto max-w-2xl text-sm text-muted-foreground">
-            Connect once through Nango. Read and act everywhere — no dedicated policy admin or claims system required.
+            Connect once, securely. Read and act everywhere — no dedicated policy admin or claims system required.
           </p>
         </div>
 
@@ -2694,7 +2708,7 @@ function CTASection({ onBookDemo }: { onBookDemo: () => void }) {
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/30" />
           <div className="relative max-w-xl px-6 py-16 md:px-12 md:py-20">
             <span className="font-mono text-xs uppercase tracking-wider text-primary">
-              Join thousands protecting policyholders
+              An audit-ready AI layer for insurance operations
             </span>
             <h2 className="mt-2 text-3xl font-semibold tracking-tight md:text-4xl">
               Give your underwriting and claims teams back their day.

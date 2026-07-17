@@ -74,7 +74,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       before: "45+ minutes per PO, keying data across email, drive, and your ERP.",
       after: "5 minutes: AI extracts, validates, and matches — you review and approve.",
       steps: [
-        { label: "Supplier emails a PO", detail: "Nango retrieves the message and attachment from Gmail or Outlook." },
+        { label: "Supplier emails a PO", detail: "The connector retrieves the message and attachment from Gmail or Outlook." },
         { label: "Eagle Doc extracts data", detail: "Line items, totals, and supplier info parsed into structured JSON." },
         { label: "Validate supplier & pricing", detail: "Supplier lookup, duplicate check, and line-item validation against your ERP." },
         { label: "AI drafts a summary", detail: "Matches, mismatches, and pricing issues explained in plain language." },
@@ -106,7 +106,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       before: "45+ minutes per claim, keying data across email, drive, and your policy admin system.",
       after: "5 minutes: AI extracts, validates, and matches — you review and approve.",
       steps: [
-        { label: "Customer submits a claim", detail: "Nango retrieves the message and attachment from Gmail or Outlook." },
+        { label: "Customer submits a claim", detail: "The connector retrieves the message and attachment from Gmail or Outlook." },
         { label: "Eagle Doc extracts data", detail: "Claim details, policy number, and loss info parsed into structured JSON." },
         { label: "Validate policy & coverage", detail: "Policy lookup, duplicate check, and coverage validation against your policy admin system." },
         { label: "AI drafts a summary", detail: "Coverage matches, exclusions, and fraud signals explained in plain language." },
@@ -137,7 +137,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       before: "45+ minutes per invoice across email, drive, and ERP.",
       after: "5 minutes: review, approve, done.",
       steps: [
-        { label: "Vendor emails invoice", detail: "Nango retrieves the message and attachment." },
+        { label: "Vendor emails invoice", detail: "The connector retrieves the message and attachment." },
         { label: "OCR extracts data", detail: "Line items, totals, and vendor info parsed." },
         {
           label: "Composio checks records",
@@ -171,12 +171,12 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       before: "60+ minutes reading and comparing against the playbook.",
       after: "10 minutes: read the summary, adjust, send.",
       steps: [
-        { label: "Contract arrives", detail: "Nango pulls the attachment from email." },
+        { label: "Contract arrives", detail: "The connector pulls the attachment from email." },
         { label: "OCR parses it", detail: "Clauses, parties, and dates extracted." },
         { label: "Composio pulls precedent", detail: "Prior matters and the firm's playbook." },
         { label: "AI flags risk", detail: "Missing clauses, deviations, and red-flag terms." },
         { label: "Lawyer reviews", detail: "Summary + inline suggestions in one view." },
-        { label: "Nango sends it back", detail: "Reviewed contract returned via email." },
+        { label: "Connector sends it back", detail: "Reviewed contract returned via email." },
       ],
     },
     connectors: {
@@ -201,7 +201,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       before: "A PM chasing drawings, schedules, and spec sections for hours.",
       after: "Draft response ready in minutes, PM approves and sends.",
       steps: [
-        { label: "Contractor raises RFI", detail: "Nango retrieves the email or Teams message." },
+        { label: "Contractor raises RFI", detail: "The connector retrieves the email or Teams message." },
         { label: "Docs parsed", detail: "OCR + document intelligence read attachments." },
         {
           label: "Composio pulls project data",
@@ -212,7 +212,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
           detail: "Grounded in the project record, cites drawings.",
         },
         { label: "PM approves", detail: "One-click approval with edits inline." },
-        { label: "Nango sends reply", detail: "Response goes back over email or Teams." },
+        { label: "Connector sends reply", detail: "Response goes back over email or Teams." },
       ],
     },
     connectors: {

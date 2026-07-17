@@ -49,7 +49,7 @@ const features: { icon: LucideIcon; title: string; description: string }[] = [
     icon: Landmark,
     title: "Works With Your Stack",
     description:
-      "See how copilots connect to Salesforce, DocuSign, email, storage, and Slack via Nango — writing records back or falling back to Google Sheets.",
+      "See how copilots connect securely to Salesforce, DocuSign, email, storage, and Slack — writing records back or falling back to Google Sheets.",
   },
 ];
 
